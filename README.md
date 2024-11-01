@@ -8,4 +8,7 @@ TreaSent is simple whatsapp-bot service to download tiktok videos and reveal the
 3. Rename `.env.schema` file to `.env` or just copy it.
 4. Run `pnpm run build && pnpm start`. That's it!
 
-> For 1st time, don't forget to scan the QR via http://localhost:3000 
+> For 1st time, don't forget to scan the QR via http://localhost:3000
+
+## License
+MIT
