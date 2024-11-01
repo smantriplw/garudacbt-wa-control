@@ -6,9 +6,9 @@ export const jadwalXxiPgmCommand = async (client: Client) => {
 		const isPremiere = ctx.flags.includes('premiere');
 
 		let results: {
-            id: string;
+			id: string;
 			title: string;
-            image: string;
+			image: string;
 			flags: string[];
 			duration: string;
 			price: string;
@@ -24,14 +24,14 @@ export const jadwalXxiPgmCommand = async (client: Client) => {
 		}
 
 		const text = `*Jadwal Bioskop XXI PGM PALU Hari Ini*\n\n\n${results
-				.map(
-					(result, index) =>
-						`${index + 1}. ${result.title}\nID Film: *${result.id}*\nTanggal: ${result.date}\nKategori: ${result.flags.join(', ')}\nHarga: *${result.price}*\nDurasi: ${result.duration.replace('Minutes', 'menit')}\nWaktu yang tersedia: ${result.times
-							.filter((time) => time.isAvailable)
-							.map((x) => x.time)
-							.join(', ')}`,
-				)
-				.join('\n\n')}
+			.map(
+				(result, index) =>
+					`${index + 1}. ${result.title}\nID Film: *${result.id}*\nTanggal: ${result.date}\nKategori: ${result.flags.join(', ')}\nHarga: *${result.price}*\nDurasi: ${result.duration.replace('Minutes', 'menit')}\nWaktu yang tersedia: ${result.times
+						.filter((time) => time.isAvailable)
+						.map((x) => x.time)
+						.join(', ')}`,
+			)
+			.join('\n\n')}
         `;
 
 		await ctx.reply(text);
