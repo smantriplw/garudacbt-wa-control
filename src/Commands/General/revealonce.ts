@@ -35,16 +35,19 @@ export const revealOnceCommand = async (client: Client) => {
 							logger: client.logger as any,
 							// biome-ignore lint/style/noNonNullAssertion: <explanation>
 							reuploadRequest: client.raw!.updateMediaMessage,
-						}
+						},
 					);
 
-					await ctx.sendRaw({
-						ptv: true,
-						audio: ptvBuff,
-						caption: ptvMessage.caption ?? 'revealed.',
-					}, {
-						quoted: replied.raw,
-					});
+					await ctx.sendRaw(
+						{
+							ptv: true,
+							audio: ptvBuff,
+							caption: ptvMessage.caption ?? 'revealed.',
+						},
+						{
+							quoted: replied.raw,
+						},
+					);
 					return;
 				}
 
@@ -61,12 +64,15 @@ export const revealOnceCommand = async (client: Client) => {
 						},
 					);
 
-					await ctx.sendRaw({
-						image: imgBuff,
-						caption: imageMessage.caption ?? 'revealed.',
-					}, {
-						quoted: replied.raw,
-					});
+					await ctx.sendRaw(
+						{
+							image: imgBuff,
+							caption: imageMessage.caption ?? 'revealed.',
+						},
+						{
+							quoted: replied.raw,
+						},
+					);
 				}
 
 				if (videoMessage) {
@@ -82,12 +88,15 @@ export const revealOnceCommand = async (client: Client) => {
 						},
 					);
 
-					await ctx.sendRaw({
-						video: videoBuff,
-						caption: videoMessage.caption ?? 'revealed.',
-					}, {
-						quoted: replied.raw,
-					});
+					await ctx.sendRaw(
+						{
+							video: videoBuff,
+							caption: videoMessage.caption ?? 'revealed.',
+						},
+						{
+							quoted: replied.raw,
+						},
+					);
 				}
 			} catch {
 				await ctx.send('[Self-Bot]: smth ws wrng');

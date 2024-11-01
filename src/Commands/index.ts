@@ -1,6 +1,7 @@
 import type { Client } from 'gampang';
 import { tiktokDownloaderCommand } from './Downloader/tiktok.js';
 import { revealOnceCommand } from './General/revealonce.js';
+import { jadwalXxiPgmCommand } from './Scraper/jadwal-xxi-pgm.js';
 
 export const registerCommands = async (client: Client) => {
 	// Downloader commands
@@ -8,4 +9,7 @@ export const registerCommands = async (client: Client) => {
 
 	// General commands
 	await revealOnceCommand(client);
+
+	// Scraper commands
+	await jadwalXxiPgmCommand(client);
 };
