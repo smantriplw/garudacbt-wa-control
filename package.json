@@ -35,12 +35,15 @@
     "@hono/node-server": "^1.13.4",
     "@whiskeysockets/baileys": "^6.7.9",
     "avvio": "^9.1.0",
+    "chartjs-node-canvas": "^4.1.6",
     "cheerio": "^1.0.0",
     "d3": "^7.9.0",
     "gampang": "^2.3.5",
     "got": "^14.4.3",
     "hono": "^4.6.8",
+    "ioredis": "^5.4.1",
     "pretty-bytes": "^6.1.1",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "strip-final-newline": "^4.0.0"
   }
 }
