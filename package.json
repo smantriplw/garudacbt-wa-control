@@ -36,11 +36,11 @@
     "@whiskeysockets/baileys": "^6.7.9",
     "avvio": "^9.1.0",
     "cheerio": "^1.0.0",
+    "d3": "^7.9.0",
     "gampang": "^2.3.5",
     "got": "^14.4.3",
     "hono": "^4.6.8",
     "pretty-bytes": "^6.1.1",
-    "sharp": "^0.33.5",
-    "vervalpd-node": "^0.2.0"
+    "sharp": "^0.33.5"
   }
 }
