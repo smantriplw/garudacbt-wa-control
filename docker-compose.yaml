@@ -1,0 +1,32 @@
+services:
+  treasent:
+    build: .
+    image: hansputera/treasent-bot-whatsapp:latest
+    ports:
+      - 5000:3001
+    env_file:
+      - .env
+    environment:
+      - REDIS_URL=redis://:thisisveryshittypasswordfuckinghahahahaha010101@redis-server:6379
+    networks:
+      - treasent-service
+    volumes:
+      - whatsapp_sessions:/app/sessions:rw
+  # Redis Server
+  redis-server:
+    image: redis:7.4-rc-alpine
+    restart: always
+    ports:
+      - "5001:6379"
+    environment:
+      - REDIS_PASSWORD=thisisveryshittypasswordfuckinghahahahaha010101
+      - REDIS_PORT=6379
+      - REDIS_DATABASES=16
+    networks:
+      - treasent-service
+volumes:
+  whatsapp_sessions:
+networks:
+  treasent-service:
+    attachable: true
+    external: true
