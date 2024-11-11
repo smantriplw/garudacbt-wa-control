@@ -1,19 +1,21 @@
 import type { Client } from 'gampang';
-import { tiktokDownloaderCommand } from './Downloader/tiktok.js';
 import { revealOnceCommand } from './General/revealonce.js';
-import { jadwalXxiPgmCommand } from './Scraper/jadwal-xxi-pgm.js';
 import { stockTradeCommand } from './Trades/stock.js';
+import { cekNisnCommand } from './CBT/cek-nisn.js';
+import { cekStatusCbtCommand } from './CBT/cek-status-cbt.js';
+import { cekRuangDanSesiCommand } from './CBT/cek-ruang-sesi.js';
+import { resetCbtCommand } from './CBT/reset.js';
 
 export const registerCommands = async (client: Client) => {
-	// Downloader commands
-	await tiktokDownloaderCommand(client);
-
 	// General commands
 	await revealOnceCommand(client);
 
-	// Scraper commands
-	await jadwalXxiPgmCommand(client);
-
 	// Trades commands
 	await stockTradeCommand(client);
+
+	// CBT Commands
+	await cekNisnCommand(client);
+	await cekStatusCbtCommand(client);
+	await cekRuangDanSesiCommand(client);
+	await resetCbtCommand(client);
 };

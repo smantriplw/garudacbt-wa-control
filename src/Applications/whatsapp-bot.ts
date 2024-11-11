@@ -11,10 +11,18 @@ export const whatsappService = async () => {
 			},
 		},
 		prefixes: ['!!', '$$'],
-		owners: process.env.DEVELOPERS?.split(',') ?? [],
 	});
 
 	await registerCommands(client);
+
+	client.on('message', async (ctx) => {
+		const replied = ctx.getReply();
+		const idSiswaRegex = new RegExp(/id_siswa=([0-9]+)/gi);
+
+		if (replied && ctx.text.toLowerCase() === 'reset' && replied.text.match(idSiswaRegex)) {
+			console.log(replied.text);
+		}
+	});
 
 	await client.launch();
 };
